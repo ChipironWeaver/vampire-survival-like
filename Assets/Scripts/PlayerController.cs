@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        _rb.MovePosition(_speed * Time.deltaTime * _move + _rb.position);
         if (_move != Vector2.zero)
         {
+            _rb.linearVelocity = _speed * _move;
             _spriteRotation = Vector2.Angle(Vector2.up, _move);
             if (_move.x > 0)
             {
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            _rb.linearVelocity = Vector3.zero;
             _spriteRotation = 0;
         }
         _spriteObject.localRotation = Quaternion.Euler(0, 0 , _spriteRotation);
