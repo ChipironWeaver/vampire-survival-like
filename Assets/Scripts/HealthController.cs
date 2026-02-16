@@ -14,18 +14,19 @@ public class HealthController : MonoBehaviour
     [SerializeField] private float _invicibilityTime;
     [SerializeField] private bool  _invicible;
     [Header("Render Settings")]
-    [SerializeField] private Sprite _heartSprite;
+    [SerializeField] private Sprite _fullSprite;
+    [SerializeField] private Sprite _emptySprite;
     [SerializeField] private GameObject _group;
         
     
-    private List<GameObject> _heartGroup = new List<GameObject>();
+    private List<Image> _heartGroup = new List<Image>();
     private Transform _transform;
     private CharacterController _characterController;
 
 
     public void Start()
     {
-        _maxHealth = _currentHealth;
+        _currentHealth = _maxHealth;
         RenderHealth(); 
         _transform = GetComponent<Transform>();
     }
@@ -75,18 +76,17 @@ public class HealthController : MonoBehaviour
 
         for (int i = 0; i < _heartGroup.Count; i++)
         {
-            if (i > _currentHealth - 1) _heartGroup[i].gameObject.SetActive(false);
-            else _heartGroup[i].gameObject.SetActive(true);
+            if (i > _currentHealth - 1) _heartGroup[i].sprite =  _emptySprite;
+            else _heartGroup[i].sprite = _fullSprite;;
         }
     }
 
-    private GameObject InstantiateHeart()
+    private Image InstantiateHeart()
     {
         GameObject Heart = new GameObject();
         Heart.transform.SetParent(_group.transform);
         Heart.name = "Heart" + (_heartGroup.Count + 1) ;
-        Heart.AddComponent<Image>().sprite = _heartSprite;
-        Heart.GetComponent<RectTransform>().localScale = Vector3.one;
-        return Heart;
+        Heart.AddComponent<RectTransform>().localScale = Vector3.one;
+        return Heart.AddComponent<Image>();
     }
 }
