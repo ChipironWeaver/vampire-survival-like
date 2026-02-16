@@ -24738,11 +24738,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d39bdb3ab5e417448fe9860815d98ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  _currentHealth: 3
+  _currentHealth: 2
   _maxHealth: 3
   _invicibilityTime: 0
   _invicible: 0
-  _heartSprite: {fileID: 3988874968453712020, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
+  _fullSprite: {fileID: 3988874968453712020, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
+  _emptySprite: {fileID: 355996716, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
   _group: {fileID: 823432549}
 --- !u!1 &1337217694
 GameObject:
