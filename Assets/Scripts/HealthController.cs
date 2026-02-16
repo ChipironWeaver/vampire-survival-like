@@ -26,7 +26,6 @@ public class HealthController : MonoBehaviour
 
     public void Start()
     {
-        _currentHealth = _maxHealth;
         RenderHealth(); 
         _transform = GetComponent<Transform>();
     }
