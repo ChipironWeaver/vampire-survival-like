@@ -10,6 +10,20 @@ public class PlayerController : MonoBehaviour
     private float _spriteRotation = 0f;
     private Transform _transform;
 
+    static PlayerController _instance;
+    public static PlayerController instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+  
+    void Awake()
+    {
+        _instance = this;
+    }
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -37,4 +51,5 @@ public class PlayerController : MonoBehaviour
     {
         _move = value.Get<Vector2>();
     }
+    
 }
