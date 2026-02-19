@@ -24307,6 +24307,7 @@ GameObject:
   - component: {fileID: 823432550}
   - component: {fileID: 823432553}
   - component: {fileID: 823432551}
+  - component: {fileID: 823432554}
   m_Layer: 5
   m_Name: Heart Render
   m_TagString: Untagged
@@ -24328,8 +24329,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1621451552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4, y: 0.95}
-  m_AnchorMax: {x: 0.6, y: 1}
+  m_AnchorMin: {x: 0.4, y: 0}
+  m_AnchorMax: {x: 0.6, y: 0.05}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24365,6 +24366,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823432549}
   m_CullTransparentMesh: 1
+--- !u!114 &823432554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823432549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73391a1457e5c0c4f95516d82b8831af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _fullSprite: {fileID: 3988874968453712020, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
+  _emptySprite: {fileID: 355996716, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
 --- !u!1001 &958645307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24583,13 +24598,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d39bdb3ab5e417448fe9860815d98ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  _currentHealth: 2
+  _currentHealth: 3
   _maxHealth: 3
   _invicibilityTime: 0.5
   _invicible: 0
-  _fullSprite: {fileID: 3988874968453712020, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
-  _emptySprite: {fileID: 355996716, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
-  _group: {fileID: 823432549}
 --- !u!212 &1235725385
 SpriteRenderer:
   serializedVersion: 2

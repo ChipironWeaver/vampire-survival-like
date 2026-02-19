@@ -13,21 +13,26 @@ public class HealthController : MonoBehaviour
     [Header("Invincibility Frame Settings")]
     [SerializeField] private float _invicibilityTime;
     [SerializeField] private bool  _invicible;
-    [Header("Render Settings")]
-    [SerializeField] private Sprite _fullSprite;
-    [SerializeField] private Sprite _emptySprite;
-    [SerializeField] private GameObject _group;
         
     
     private List<Image> _heartGroup = new List<Image>();
     private Transform _transform;
     private CharacterController _characterController;
+    
+    public delegate void OnPlayerDamage(int  health, int maxHealth);
+    public static event OnPlayerDamage onPlayerDamage;
+    
+    public delegate void OnPlayerHeal(int  health, int maxHealth);
+    public static event OnPlayerHeal onPlayerHeal;
+    
+    public delegate void OnDeath();
+    public static event OnDeath onDeath;
 
 
     public void Start()
     {
-        RenderHealth(); 
         _transform = GetComponent<Transform>();
+        onPlayerHeal?.Invoke(_currentHealth, _maxHealth);
     }
 
     public void TakeDamage(int damage)
@@ -37,12 +42,16 @@ public class HealthController : MonoBehaviour
             _currentHealth -= damage;
             if (_currentHealth <= 0)
             {
-                Death();
+                onDeath?.Invoke();
             }
-            _invicible = true;
-            Invoke(nameof(RemoveInvincibility), _invicibilityTime);
+            else
+            {
+                _invicible = true;
+                onPlayerDamage?.Invoke(_currentHealth, _maxHealth);
+                Invoke(nameof(RemoveInvincibility), _invicibilityTime);
+            }
+            
         }
-        RenderHealth();
     }
 
     public void Heal(int heal)
@@ -52,40 +61,11 @@ public class HealthController : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
-        RenderHealth();
-    }
-
-    public void Death()
-    {
-        print("death");
-        
+        onPlayerHeal?.Invoke(_currentHealth, _maxHealth);
     }
 
     private void RemoveInvincibility()
     {
         _invicible = false;
-    }
-
-    private void RenderHealth()
-    {
-        while (_heartGroup.Count < _maxHealth)
-        {
-            _heartGroup.Add(InstantiateHeart());
-        }
-
-        for (int i = 0; i < _heartGroup.Count; i++)
-        {
-            if (i > _currentHealth - 1) _heartGroup[i].sprite =  _emptySprite;
-            else _heartGroup[i].sprite = _fullSprite;;
-        }
-    }
-
-    private Image InstantiateHeart()
-    {
-        GameObject Heart = new GameObject();
-        Heart.transform.SetParent(_group.transform);
-        Heart.name = "Heart" + (_heartGroup.Count + 1) ;
-        Heart.AddComponent<RectTransform>().localScale = Vector3.one;
-        return Heart.AddComponent<Image>();
     }
 }
