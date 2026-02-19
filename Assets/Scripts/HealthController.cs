@@ -8,8 +8,8 @@ using Image = UnityEngine.UI.Image;
 public class HealthController : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField] private int _currentHealth;
-    [SerializeField] private int _maxHealth;
+    [SerializeField] public int currentHealth;
+    [SerializeField] public int maxHealth;
     [Header("Invincibility Frame Settings")]
     [SerializeField] private float _invicibilityTime;
     [SerializeField] private bool  _invicible;
@@ -19,10 +19,10 @@ public class HealthController : MonoBehaviour
     private Transform _transform;
     private CharacterController _characterController;
     
-    public delegate void OnPlayerDamage(int  health, int maxHealth);
+    public delegate void OnPlayerDamage();
     public static event OnPlayerDamage onPlayerDamage;
     
-    public delegate void OnPlayerHeal(int  health, int maxHealth);
+    public delegate void OnPlayerHeal();
     public static event OnPlayerHeal onPlayerHeal;
     
     public delegate void OnDeath();
@@ -32,22 +32,27 @@ public class HealthController : MonoBehaviour
     public void Start()
     {
         _transform = GetComponent<Transform>();
-        onPlayerHeal?.Invoke(_currentHealth, _maxHealth);
+        GameStart();
+    }
+
+    public void GameStart()
+    {
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
         if (!_invicible)
         {
-            _currentHealth -= damage;
-            if (_currentHealth <= 0)
+            currentHealth -= damage;
+            if (currentHealth <= 0)
             {
                 onDeath?.Invoke();
             }
             else
             {
                 _invicible = true;
-                onPlayerDamage?.Invoke(_currentHealth, _maxHealth);
+                onPlayerDamage?.Invoke();
                 Invoke(nameof(RemoveInvincibility), _invicibilityTime);
             }
             
@@ -56,12 +61,12 @@ public class HealthController : MonoBehaviour
 
     public void Heal(int heal)
     {
-        _currentHealth += heal;
-        if (_currentHealth > _maxHealth)
+        currentHealth += heal;
+        if (currentHealth > maxHealth)
         {
-            _currentHealth = _maxHealth;
+            currentHealth = maxHealth;
         }
-        onPlayerHeal?.Invoke(_currentHealth, _maxHealth);
+        onPlayerHeal?.Invoke();
     }
 
     private void RemoveInvincibility()

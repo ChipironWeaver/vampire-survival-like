@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
@@ -8,6 +9,7 @@ public class HealthRenderController : MonoBehaviour
     [Header("Render Settings")]
     [SerializeField] private Sprite _fullSprite;
     [SerializeField] private Sprite _emptySprite;
+    [SerializeField] private HealthController _healthController;
 
     private void OnEnable()
     {
@@ -20,17 +22,27 @@ public class HealthRenderController : MonoBehaviour
         HealthController.onPlayerDamage -= RenderHealth;
         HealthController.onPlayerHeal -= RenderHealth;
     }
-    
-    private void RenderHealth(int currentHealth, int maxHealth)
+
+    private void Start()
     {
-        while (_heartGroup.Count < maxHealth)
+        GameStart();
+    }
+
+    private void GameStart()
+    {
+        Invoke(nameof(RenderHealth), 0.1f);
+    }
+    
+    private void RenderHealth()
+    {
+        while (_heartGroup.Count < _healthController.maxHealth)
         {
             _heartGroup.Add(InstantiateHeart());
         }
 
         for (int i = 0; i < _heartGroup.Count; i++)
         {
-            if (i > currentHealth - 1) _heartGroup[i].sprite =  _emptySprite;
+            if (i > _healthController.currentHealth - 1) _heartGroup[i].sprite =  _emptySprite;
             else _heartGroup[i].sprite = _fullSprite;;
         }
     }
