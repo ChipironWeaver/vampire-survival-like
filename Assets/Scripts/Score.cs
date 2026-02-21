@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -38,11 +36,11 @@ public class Score : MonoBehaviour
         _scoreText.color = Color.white;
     }
     
-    static public void UpdateScore(float tempScore = 0, float tempScoreMultiplier = 0)
+    public static void UpdateScore(float tempScore = 0, float tempScoreMultiplier = 0)
     {
         score += tempScore;
         scoreMultiplier += tempScoreMultiplier;
-        int intScore =  (int)(score * scoreMultiplier); 
+        int intScore = (int)(score * scoreMultiplier); 
         _scoreText.SetText(intScore.ToString());
     }
 
@@ -65,22 +63,21 @@ public class Score : MonoBehaviour
 
     private void DamageUpdate()
     {
-        UpdateScore(-100,-1);
+        UpdateScore(-50,-0.75f);
     }
 
     private void HealUpdate()
     {
-        UpdateScore(75,0.5f);
+        UpdateScore(30,0.5f);
     }
     
     IEnumerator FadeOut(bool win)
     {
-        Color fadeColor = win ? _winColor : _loseColor;
         float currentTime = 0f;
         while (currentTime < _fadeOutDuration)
         {
             currentTime += Time.deltaTime;
-            _scoreText.color = Color.Lerp(Color.white, fadeColor, currentTime / _fadeOutDuration);
+            _scoreText.color = Color.Lerp(Color.white, win ? _winColor : _loseColor, currentTime / _fadeOutDuration);
             yield return new WaitForNextFrameUnit();
         }
     }
