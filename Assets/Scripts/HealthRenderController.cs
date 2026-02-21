@@ -15,12 +15,14 @@ public class HealthRenderController : MonoBehaviour
     {
         HealthController.onPlayerDamage += RenderHealth;
         HealthController.onPlayerHeal += RenderHealth;
+        LevelController.onStartGame += GameStart;
     }
 
     private void OnDisable()
     {
         HealthController.onPlayerDamage -= RenderHealth;
         HealthController.onPlayerHeal -= RenderHealth;
+        LevelController.onStartGame += GameStart;
     }
 
     private void Start()

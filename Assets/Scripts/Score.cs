@@ -11,8 +11,8 @@ public class Score : MonoBehaviour
     [SerializeField] private Color _winColor;
     [SerializeField] private Color _loseColor;
     [SerializeField] private float _fadeOutDuration;
-    static float score = 100;
-    static float scoreMultiplier = 3;
+    public static float score = 100;
+    public static float scoreMultiplier = 3;
     static TextMeshProUGUI _scoreText;
 
     static Score _instance;

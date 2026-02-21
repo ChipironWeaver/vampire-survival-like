@@ -33,8 +33,6 @@ public class LevelController : MonoBehaviour
         GameStart();
     }
 
-    
-
     public void GameStart()
     {
         onStartGame?.Invoke();

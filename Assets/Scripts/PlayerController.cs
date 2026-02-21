@@ -28,7 +28,19 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _transform = GetComponent<Transform>();
+        LevelController.onStartGame += GameStart;
     }
+
+    void OnDisable()
+    {
+        LevelController.onStartGame -= GameStart;
+    }
+
+    void GameStart()
+    {
+        transform.position = Vector3.zero;
+    }
+    
     void Update()
     {
         if (_move != Vector2.zero)
