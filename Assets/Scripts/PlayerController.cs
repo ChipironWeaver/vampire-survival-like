@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         _instance = this;
     }
     
-    void Start()
+    void OnEnable()
     {
         _rb = GetComponent<Rigidbody2D>();
         _transform = GetComponent<Transform>();
@@ -47,9 +47,16 @@ public class PlayerController : MonoBehaviour
         }
         _transform.localRotation = Quaternion.Euler(0, 0 , _spriteRotation);
     }
+
     void OnMove(InputValue value)
     {
-        _move = value.Get<Vector2>();
+        if (LevelController.gameIsRunning)
+        {
+            _move = value.Get<Vector2>();
+        }
+        else
+        {
+            _move = Vector2.zero;
+        }
     }
-    
 }

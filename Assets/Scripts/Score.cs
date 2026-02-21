@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -8,14 +9,25 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private float _baseScore;
     [SerializeField] private float _baseScoreMultiplier;
+    [Header("Fade out color")]
+    [SerializeField] private Color _winColor;
+    [SerializeField] private Color _loseColor;
+    [SerializeField] private float _fadeOutDuration;
     static float score = 100;
     static float scoreMultiplier = 3;
     static TextMeshProUGUI _scoreText;
 
-    private void Start()
+    static Score _instance;
+    public static Score instance
     {
-        _scoreText = GetComponent<TextMeshProUGUI>();
-        GameStart();
+        get
+        {
+            return _instance;
+        }
+    }
+    void Awake()
+    {
+        _instance = this;
     }
 
     private void GameStart()
@@ -23,27 +35,32 @@ public class Score : MonoBehaviour
         score = _baseScore;
         scoreMultiplier = _baseScoreMultiplier;
         UpdateScore();
+        _scoreText.color = Color.white;
     }
     
-    
-    static void UpdateScore(float tempScore = 0, float tempScoreMultiplier = 0)
+    static public void UpdateScore(float tempScore = 0, float tempScoreMultiplier = 0)
     {
         score += tempScore;
         scoreMultiplier += tempScoreMultiplier;
         int intScore =  (int)(score * scoreMultiplier); 
-        _scoreText.SetText(intScore.ToString(),true);
+        _scoreText.SetText(intScore.ToString());
     }
 
     private void OnEnable()
     {
         HealthController.onPlayerDamage += DamageUpdate;
         HealthController.onPlayerHeal += HealUpdate;
+        LevelController.onStartGame += GameStart;
+        LevelController.onGameOver += StartFadeOut;
+        _scoreText = GetComponent<TextMeshProUGUI>();
     }
 
     private void OnDisable()
     {
         HealthController.onPlayerDamage -= DamageUpdate;
         HealthController.onPlayerHeal -= HealUpdate;
+        LevelController.onStartGame -= GameStart;
+        LevelController.onGameOver -= StartFadeOut;
     }
 
     private void DamageUpdate()
@@ -56,8 +73,20 @@ public class Score : MonoBehaviour
         UpdateScore(75,0.5f);
     }
     
-    private void PickupUpdate()
+    IEnumerator FadeOut(bool win)
     {
-        UpdateScore(50);
+        Color fadeColor = win ? _winColor : _loseColor;
+        float currentTime = 0f;
+        while (currentTime < _fadeOutDuration)
+        {
+            currentTime += Time.deltaTime;
+            _scoreText.color = Color.Lerp(Color.white, fadeColor, currentTime / _fadeOutDuration);
+            yield return new WaitForNextFrameUnit();
+        }
+    }
+
+    private void StartFadeOut(bool win)
+    {
+        StartCoroutine(FadeOut(win));
     }
 }

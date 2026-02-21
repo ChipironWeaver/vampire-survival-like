@@ -24,15 +24,18 @@ public class HealthController : MonoBehaviour
     
     public delegate void OnPlayerHeal();
     public static event OnPlayerHeal onPlayerHeal;
-    
-    public delegate void OnDeath();
-    public static event OnDeath onDeath;
 
 
-    public void Start()
+    public void OnEnable()
     {
         _transform = GetComponent<Transform>();
-        GameStart();
+        LevelController.onStartGame += GameStart;
+
+    }
+
+    public void OnDisable()
+    {
+        LevelController.onStartGame -= GameStart;
     }
 
     public void GameStart()
@@ -45,17 +48,16 @@ public class HealthController : MonoBehaviour
         if (!_invicible)
         {
             currentHealth -= damage;
+            onPlayerDamage?.Invoke();
             if (currentHealth <= 0)
             {
-                onDeath?.Invoke();
+                LevelController.GameOver(false);
             }
             else
             {
                 _invicible = true;
-                onPlayerDamage?.Invoke();
                 Invoke(nameof(RemoveInvincibility), _invicibilityTime);
             }
-            
         }
     }
 

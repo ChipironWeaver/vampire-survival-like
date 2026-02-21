@@ -24380,6 +24380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _fullSprite: {fileID: 3988874968453712020, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
   _emptySprite: {fileID: 355996716, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
+  _healthController: {fileID: 1235725384}
 --- !u!1001 &958645307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24598,6 +24599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d39bdb3ab5e417448fe9860815d98ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  currentHealth: 0
+  maxHealth: 3
   _invicibilityTime: 0.5
   _invicible: 0
 --- !u!212 &1235725385
@@ -24722,14 +24725,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -19.484558, y: 20.69554}
-      - {x: -31.410873, y: 7.024397}
-      - {x: -30.536316, y: -16.720324}
-      - {x: -3.6268272, y: -25.313824}
-      - {x: 26.047245, y: -20.3947}
-      - {x: 33.064583, y: -4.262167}
-      - {x: 25.41436, y: 20.204136}
-      - {x: 8.992165, y: 22.328009}
+    - - {x: -20.074078, y: 19.516504}
+      - {x: -30.360975, y: 3.1259918}
+      - {x: -29.657658, y: -15.594353}
+      - {x: -3.3910198, y: -24.724304}
+      - {x: 25.811438, y: -18.390335}
+      - {x: 32.121353, y: -4.262167}
+      - {x: 23.881609, y: 16.784927}
+      - {x: 4.8655334, y: 19.498316}
   m_UseDelaunayMesh: 1
 --- !u!4 &1337217696
 Transform:
@@ -24810,9 +24813,18 @@ MonoBehaviour:
   - {fileID: 590976466}
   _baseCooldown: 5
   _cooldownDecrease: 0.2
-  _enemyAmount: 1.2
+  _baseEnemyAmount: 1
   _enemyAmountMultiplier: 1
-  _seed: beep boop
+  _seed:
+  - ehsehrtherds
+  - qerhqehrtjryf
+  - rrhqserh
+  - qehqerh
+  - hqerhqerh
+  - sqerh
+  - qerhqerh
+  - qerhqeh
+  - erhherqreqhr
 --- !u!1001 &1421995021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25021,6 +25033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1658447511}
+  - component: {fileID: 1658447512}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -25044,6 +25057,20 @@ Transform:
   - {fileID: 1385521565}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658447512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658447510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81abf9d227f4626418b920689671f957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameTime: 60
+  currentGameTime: 0
 --- !u!1001 &1684346616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25258,6 +25285,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _baseScore: 100
   _baseScoreMultiplier: 3
+  _winColor: {r: 0.04431629, g: 1, b: 0, a: 0}
+  _loseColor: {r: 1, g: 0, b: 0, a: 0}
+  _fadeOutDuration: 1
 --- !u!1 &1868458002
 GameObject:
   m_ObjectHideFlags: 0
