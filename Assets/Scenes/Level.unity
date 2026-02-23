@@ -25756,8 +25756,8 @@ MonoBehaviour:
   _spawnerTransform: []
   _baseCooldown: 5
   _cooldownDecrease: 0.2
-  _baseEnemyAmount: 1
-  _enemyAmountMultiplier: 1
+  _baseEnemyAmount: 1.4
+  _enemyAmountMultiplier: 1.2
   _seed:
   - ehsehrtherds
   - qerhqehrtjryf
@@ -26426,7 +26426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0081b856ee3544197828c8b7c0b2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _ost: {fileID: 0}
 --- !u!1 &1713461425
 GameObject:
   m_ObjectHideFlags: 0

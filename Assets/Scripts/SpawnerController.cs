@@ -74,10 +74,10 @@ public class SpawnerController : MonoBehaviour
             }
 
             _enemyAmount *= _enemyAmountMultiplier;
-            _baseCooldown -= _cooldownDecrease;
+            _currentCooldown -= _cooldownDecrease;
             
             
-            if (_baseCooldown < 0.5f) _baseCooldown = 0.5f ;
+            if (_currentCooldown < 0.5f) _currentCooldown = 0.5f ;
             _currentCooldown = 0f;
             
         }
