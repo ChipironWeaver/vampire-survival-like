@@ -40,6 +40,8 @@ public class LevelController : MonoBehaviour
     {
         onStartGame?.Invoke();
         gameIsRunning = true;
+        CurrentGameTime = 0f;
+        _currentScoreCooldown = 0f;
         MaxGameTime = _maxGameTime;
     }
 
