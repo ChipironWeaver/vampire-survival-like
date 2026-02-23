@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 849550469, guid: 2f82f890a08dac04d8b77c01047bdeb4, type: 3}
   m_Color: {r: 0.7311321, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +128,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.7
 --- !u!114 &8240353172547361711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2f8e62726fa984ca3adbd56eb22004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpController
-  _buffDuration: 2
+  _buffDuration: 5
   _healAmount: 0
-  _speedBoost: 6
+  _speedBoost: 2
   _scoreBoost: 100
   _scoreMultiplierBoost: 0
   _clip: {fileID: 8300000, guid: 2e8eb491013405f47ada42a72df37d01, type: 3}
