@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1;
+    [SerializeField] public float speed = 1;
     private Vector2 _move;
     private Rigidbody2D _rb;
     private float _spriteRotation = 0f;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             {
                 _spriteRotation = 180-_spriteRotation + 180;
             }
-            _rb.linearVelocity = _speed * _move;
+            _rb.linearVelocity = speed * _move;
         }
         else
         {

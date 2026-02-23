@@ -25,6 +25,7 @@ public class SpawnerController : MonoBehaviour
     {
         LevelController.onGameOver += DestroyEnemies;
         LevelController.onStartGame += GameStart;
+        
     }
 
     private void OnDisable()
@@ -36,6 +37,13 @@ public class SpawnerController : MonoBehaviour
 
     private void GameStart()
     {
+        if (_spawnerTransform.Count == 0)
+        {
+            foreach (Transform t in GetComponentsInChildren<Transform>())
+            {
+                _spawnerTransform.Add(t);
+            }
+        }
         _random = new Random(_seed[_random.Next(0,_seed.Count)].GetHashCode());
         if (_enemiesParent == null)
         {
