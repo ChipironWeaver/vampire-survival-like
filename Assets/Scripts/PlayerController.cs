@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] public float speed = 1;
     private Vector2 _move;
     private Rigidbody2D _rb;
-    private float _spriteRotation = 0f;
+    private float _spriteRotation;
     private Transform _transform;
-
+    private Animator _animator;
     static PlayerController _instance;
-    public static PlayerController instance
+    
+    public static PlayerController Instance
     {
         get
         {
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _transform = GetComponent<Transform>();
+        _animator = GetComponent<Animator>();
         LevelController.onStartGame += GameStart;
     }
 
@@ -45,17 +46,18 @@ public class PlayerController : MonoBehaviour
     {
         if (_move != Vector2.zero)
         {
-            
             _spriteRotation = Vector2.Angle(Vector2.up, _move);
             if (_move.x > 0)
             {
                 _spriteRotation = 180-_spriteRotation + 180;
             }
             _rb.linearVelocity = speed * _move;
+            _animator.SetBool("IsMoving", true);
         }
         else
         {
             _rb.linearVelocity = Vector3.zero;
+            _animator.SetBool("IsMoving", false);
         }
         _transform.localRotation = Quaternion.Euler(0, 0 , _spriteRotation);
     }

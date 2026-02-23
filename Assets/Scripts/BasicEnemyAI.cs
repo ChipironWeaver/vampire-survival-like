@@ -13,7 +13,7 @@ public class BasicEnemyAI : MonoBehaviour
         _transform = GetComponent<Transform>();
         if (_target == null)
         {
-            _target = PlayerController.instance.transform;
+            _target = PlayerController.Instance.transform;
         }
     }
 

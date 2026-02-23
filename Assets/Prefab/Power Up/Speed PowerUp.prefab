@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2f8e62726fa984ca3adbd56eb22004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpController
-  _buffDuration: 0
+  _buffDuration: 2
   _healAmount: 0
-  _speedBoost: 2
+  _speedBoost: 6
   _scoreBoost: 100
   _scoreMultiplierBoost: 0
   _clip: {fileID: 8300000, guid: 2e8eb491013405f47ada42a72df37d01, type: 3}
