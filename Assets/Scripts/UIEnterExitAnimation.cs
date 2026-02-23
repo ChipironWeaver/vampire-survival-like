@@ -16,6 +16,9 @@ public class UIEnterExitAnimation : MonoBehaviour
     [SerializeField] private Color _textLoseColor;
     [SerializeField] private string _loseText;
     [SerializeField] private string _winText;
+    [Header("Audio")]
+    [SerializeField] private AudioClip _winClip;
+    [SerializeField] private AudioClip _loseClip;
     [Header("References")]
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private TextMeshProUGUI _winLoseText;
@@ -48,6 +51,8 @@ public class UIEnterExitAnimation : MonoBehaviour
         _scoreText.color = textColor;
         _replayText.color = textColor;
         _winLoseText.color = textColor;
+        
+        AudioSource.PlayClipAtPoint(win ? _winClip : _loseClip, Vector3.zero);
         
         int _score = (int)(Score.score * Score.scoreMultiplier);
         _scoreText.SetText(_score.ToString());

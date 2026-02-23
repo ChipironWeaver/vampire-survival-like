@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
     [SerializeField] private float _maxGameTime = 60f;
+    [SerializeField] private int _overTimeScore;    
     public delegate void OnStartGame();
     public static event OnStartGame onStartGame;
 
@@ -14,6 +15,8 @@ public class LevelController : MonoBehaviour
     public static float CurrentGameTime;
     public static float MaxGameTime = 60f;
     public static bool gameIsRunning = false;
+    
+    private float _currentScoreCooldown = 0f;
     
     static LevelController _instance;
     public static LevelController instance
@@ -51,6 +54,12 @@ public class LevelController : MonoBehaviour
         if (gameIsRunning)
         {
             CurrentGameTime += Time.deltaTime;
+            _currentScoreCooldown += Time.deltaTime;
+            if (_currentScoreCooldown >= 1f)
+            {
+                Score.UpdateScore(_overTimeScore);
+                _currentScoreCooldown -= 1f;
+            }
             if (CurrentGameTime >= _maxGameTime) GameOver(true);
         }
     }

@@ -25063,8 +25063,8 @@ MonoBehaviour:
   - {fileID: 7120608737826780841, guid: da831e98afa79f043912f1e52cde6197, type: 3}
   - {fileID: 7120608737826780841, guid: 0a54fbb7128b38f4aaa7bfdf0020453f, type: 3}
   _spawnerTransform: []
-  _baseCooldown: 10
-  _cooldownDecrease: 1
+  _baseCooldown: 5
+  _cooldownDecrease: 0.2
   _baseEnemyAmount: 1
   _enemyAmountMultiplier: 1
   _seed:
@@ -25808,6 +25808,8 @@ MonoBehaviour:
   _textLoseColor: {r: 0.20754719, g: 0, b: 0, a: 1}
   _loseText: You Lost :(
   _winText: You Win!
+  _winClip: {fileID: 8300000, guid: 6149ed9795c5f1c4788075cb1e6c69ed, type: 3}
+  _loseClip: {fileID: 8300000, guid: f189e46849157c747bbd1ae9cd4ab04f, type: 3}
   _scoreText: {fileID: 768816995}
   _winLoseText: {fileID: 1279395221}
   _replayText: {fileID: 725622265}
@@ -26036,6 +26038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1576403264}
+  - component: {fileID: 1576403265}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -26061,6 +26064,14 @@ Transform:
   - {fileID: 1337217696}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1576403265
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576403263}
+  m_Enabled: 1
 --- !u!1 &1621451548
 GameObject:
   m_ObjectHideFlags: 0
@@ -26213,6 +26224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _maxGameTime: 60
+  _overTimeScore: 10
 --- !u!1001 &1684346616
 PrefabInstance:
   m_ObjectHideFlags: 0

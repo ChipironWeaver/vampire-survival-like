@@ -8,6 +8,7 @@ public class PowerUpController : MonoBehaviour
     [SerializeField] private float _speedBoost;
     [SerializeField] private float _scoreBoost;
     [SerializeField] private float _scoreMultiplierBoost;
+    [SerializeField] private AudioClip _clip;
     
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -40,6 +41,8 @@ public class PowerUpController : MonoBehaviour
                 Score.UpdateScore(_scoreBoost, _scoreMultiplierBoost);
             }
 
+            if (_clip != null) AudioSource.PlayClipAtPoint(_clip, Vector3.zero);
+            
             StartCoroutine(DestroySelf(player));
         }
     }

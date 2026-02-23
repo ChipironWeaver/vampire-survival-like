@@ -146,3 +146,4 @@ MonoBehaviour:
   _speedBoost: 0
   _scoreBoost: 0
   _scoreMultiplierBoost: 0
+  _clip: {fileID: 8300000, guid: 2e8eb491013405f47ada42a72df37d01, type: 3}
