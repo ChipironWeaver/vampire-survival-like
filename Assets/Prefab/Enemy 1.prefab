@@ -86,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3988874968453712020, guid: 61c5163c6200e3a4eaa1defde0008ef1, type: 3}
-  m_Color: {r: 0.23887502, g: 0.74537, b: 0.8301887, a: 1}
+  m_Sprite: {fileID: 414658417624017036, guid: b943a923d441b304a83c283f09433e53, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemyAI
   _target: {fileID: 0}
-  _moveSpeed: 1
+  _moveSpeed: 1.75
+  _rotationBasedMovement: 1
 --- !u!114 &716424819739275574
 MonoBehaviour:
   m_ObjectHideFlags: 0
