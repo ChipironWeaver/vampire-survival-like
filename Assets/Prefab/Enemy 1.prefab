@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8591888582935714132}
   - component: {fileID: 716424819739275574}
   - component: {fileID: 8922647557830635066}
-  - component: {fileID: 9220659409580691112}
-  - component: {fileID: 6465562870191230879}
+  - component: {fileID: 7398048270347639850}
+  - component: {fileID: 151075503090709261}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -151,8 +151,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &9220659409580691112
-CircleCollider2D:
+--- !u!70 &7398048270347639850
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -186,9 +186,10 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!58 &6465562870191230879
-CircleCollider2D:
+  m_Size: {x: 0.65, y: 0.9}
+  m_Direction: 0
+--- !u!70 &151075503090709261
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -222,4 +223,5 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.4
+  m_Size: {x: 0.5, y: 0.75}
+  m_Direction: 0
