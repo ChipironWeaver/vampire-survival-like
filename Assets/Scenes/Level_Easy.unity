@@ -41805,7 +41805,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 3
   _invicibilityTime: 0.5
-  _invicible: 1
+  _invicible: 0
 --- !u!212 &1235725385
 SpriteRenderer:
   serializedVersion: 2
