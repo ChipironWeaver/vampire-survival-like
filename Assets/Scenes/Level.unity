@@ -41604,8 +41604,8 @@ MonoBehaviour:
   _spawnerTransform: []
   _baseCooldown: 5
   _cooldownDecrease: 0.2
-  _baseEnemyAmount: 1
-  _enemyAmountMultiplier: 1
+  _baseEnemyAmount: 1.1
+  _enemyAmountMultiplier: 1.2
   _seed:
   - fuylmdghq
   - zsretykyimf
@@ -42204,8 +42204,8 @@ MonoBehaviour:
   _spawnerTransform: []
   _baseCooldown: 5
   _cooldownDecrease: 0.2
-  _baseEnemyAmount: 1.4
-  _enemyAmountMultiplier: 1.2
+  _baseEnemyAmount: 1.6
+  _enemyAmountMultiplier: 1.15
   _seed:
   - ehsehrtherds
   - qerhqehrtjryf
