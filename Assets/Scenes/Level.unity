@@ -43019,6 +43019,10 @@ MonoBehaviour:
   _loseColor: {r: 1, g: 0, b: 0, a: 0}
   _fadeOutDuration: 1
   _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _damageScore: -50
+  _damageScoreMultiplier: -0.75
+  _healthScore: 100
+  _healthScoreMultiplier: 0.15
 --- !u!1 &1733378722
 GameObject:
   m_ObjectHideFlags: 0

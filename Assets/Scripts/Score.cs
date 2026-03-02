@@ -12,6 +12,12 @@ public class Score : MonoBehaviour
     [SerializeField] private Color _loseColor;
     [SerializeField] private float _fadeOutDuration;
     [SerializeField] private Color _baseColor;
+    [Header("Damage Score")]
+    [SerializeField] private float _damageScore;
+    [SerializeField] private float _damageScoreMultiplier;
+    [Header("Health Score")]
+    [SerializeField] private float _healthScore;
+    [SerializeField] private float _healthScoreMultiplier;
     public static Color textColor = Color.white;
     
     public static float score = 100;
@@ -67,12 +73,12 @@ public class Score : MonoBehaviour
 
     private void DamageUpdate()
     {
-        UpdateScore(-50,-0.75f);
+        UpdateScore(_damageScore,_damageScoreMultiplier);
     }
 
     private void HealUpdate()
     {
-        UpdateScore(50,0.25f);
+        UpdateScore(_healthScore,_healthScoreMultiplier);
     }
     
     IEnumerator FadeOut(bool win)
