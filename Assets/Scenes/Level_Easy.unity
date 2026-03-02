@@ -42204,8 +42204,8 @@ MonoBehaviour:
   _spawnerTransform: []
   _baseCooldown: 5
   _cooldownDecrease: 0.2
-  _baseEnemyAmount: 1.6
-  _enemyAmountMultiplier: 1.25
+  _baseEnemyAmount: 1.4
+  _enemyAmountMultiplier: 1.1
   _seed:
   - ehsehrtherds
   - qerhqehrtjryf
