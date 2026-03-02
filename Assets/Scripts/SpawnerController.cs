@@ -15,6 +15,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private float _enemyAmountMultiplier = 1f;
     [SerializeField] private List<string> _seed;
     [Header("Balance")]
+    [SerializeField] private float _requiredPlayerDistance;
     
     private float _currentCooldown;
     private float _enemyAmount;
@@ -70,8 +71,14 @@ public class SpawnerController : MonoBehaviour
             for (int i = 1 ; i <= _enemyAmount; i++)
             {
                 Vector2 _spawnPosition = _spawnerTransform[_random.Next(0, _spawnerTransform.Count)].position;
+                if (Vector2.Distance(_spawnPosition, PlayerController.Instance.transform.position) < _requiredPlayerDistance)
+                { 
+                    _spawnPosition = _spawnerTransform[_random.Next(0, _spawnerTransform.Count)].position;
+                }
+
                 GameObject _enemieSelected =  _enemiesPrefabs[_random.Next(0, _enemiesPrefabs.Count)];
                 _enemies.Add(InstantiateEnemy(_spawnPosition, _enemieSelected));
+                
             }
 
             _enemyAmount *= _enemyAmountMultiplier;
