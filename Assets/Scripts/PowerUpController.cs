@@ -16,6 +16,10 @@ public class PowerUpController : MonoBehaviour
     private Collider2D _collider;
     private GameObject _player;
 
+    
+    public delegate void PickUpFlash(Color color, float duration);
+    public static event PickUpFlash onPickUpFlash;
+    
     void OnEnable()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -44,9 +48,9 @@ public class PowerUpController : MonoBehaviour
                 Score.UpdateScore(_scoreBoost, _scoreMultiplierBoost);
             }
 
-            if (_clip != null) AudioSource.PlayClipAtPoint(_clip, Vector3.zero);
+            onPickUpFlash?.Invoke(_flashColor, _flashDuration);
             
-            StartCoroutine(UIFlash.CoroutineFlash(_flashColor, _flashDuration));
+            if (_clip != null) AudioSource.PlayClipAtPoint(_clip, Vector3.zero);
             if(_buffDuration >= 0) StartCoroutine(DestroySelf());
         }
     }

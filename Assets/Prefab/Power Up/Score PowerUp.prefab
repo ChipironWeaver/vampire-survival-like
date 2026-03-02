@@ -148,4 +148,4 @@ MonoBehaviour:
   _scoreMultiplierBoost: 0.5
   _clip: {fileID: 8300000, guid: 2e8eb491013405f47ada42a72df37d01, type: 3}
   _flashColor: {r: 1, g: 0.8697457, b: 0.5330188, a: 0.5803922}
-  _flashDuration: 0
+  _flashDuration: 0.5

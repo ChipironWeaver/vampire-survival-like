@@ -44,6 +44,7 @@ public class UIFlash : MonoBehaviour
     {
         HealthController.onPlayerDamage += DamageFlash;
         LevelController.onGameOver += EndFlash;
+        PowerUpController.onPickUpFlash += Flash;
         flash = GetComponent<Image>();
     }
 
@@ -51,6 +52,7 @@ public class UIFlash : MonoBehaviour
     {
         HealthController.onPlayerDamage -= DamageFlash;
         LevelController.onGameOver -= EndFlash;
+        PowerUpController.onPickUpFlash -= Flash;
     }
 
     private void DamageFlash()
@@ -78,5 +80,10 @@ public class UIFlash : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return new WaitForNextFrameUnit();
         }
+    }
+
+    public void Flash(Color color, float duration)
+    {
+        StartCoroutine(CoroutineFlash(color, duration));
     }
 }
