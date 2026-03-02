@@ -19,11 +19,6 @@ public class PowerUpController : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
     }
-
-    void OnDestroy()
-    {
-        _player.GetComponent<PlayerController>().speed -= _speedBoost;
-    }
     
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,17 +44,14 @@ public class PowerUpController : MonoBehaviour
 
             if (_clip != null) AudioSource.PlayClipAtPoint(_clip, Vector3.zero);
             
-            if(_buffDuration>0) StartCoroutine(DestroySelf());
+            if(_buffDuration >= 0) StartCoroutine(DestroySelf());
         }
     }
     
     private IEnumerator DestroySelf()
     {
         yield return new WaitForSeconds(_buffDuration);
-        if (_speedBoost > 0)
-        {
-            _player.GetComponent<PlayerController>().speed += _speedBoost;
-        }
+        if (_speedBoost > 0) _player.GetComponent<PlayerController>().speed -= _speedBoost;
         Destroy(this.gameObject);
     }
 }
