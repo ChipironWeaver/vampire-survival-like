@@ -41805,7 +41805,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 3
   _invicibilityTime: 0.5
-  _invicible: 0
+  _invicible: 1
 --- !u!212 &1235725385
 SpriteRenderer:
   serializedVersion: 2
@@ -42205,7 +42205,7 @@ MonoBehaviour:
   _baseCooldown: 5
   _cooldownDecrease: 0.2
   _baseEnemyAmount: 1.6
-  _enemyAmountMultiplier: 1.15
+  _enemyAmountMultiplier: 1.25
   _seed:
   - ehsehrtherds
   - qerhqehrtjryf
@@ -42765,7 +42765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _maxGameTime: 60
-  _overTimeScore: 10
+  _overTimeScore: 20
 --- !u!82 &1658447513
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43013,14 +43013,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ab232f2ab46894e89caff8598b795e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _baseScore: 100
-  _baseScoreMultiplier: 3
+  _baseScore: 300
+  _baseScoreMultiplier: 1
   _winColor: {r: 0.04431629, g: 1, b: 0, a: 0}
   _loseColor: {r: 1, g: 0, b: 0, a: 0}
   _fadeOutDuration: 1
   _baseColor: {r: 1, g: 1, b: 1, a: 1}
-  _damageScore: -50
-  _damageScoreMultiplier: -0.75
+  _damageScore: -100
+  _damageScoreMultiplier: -1
   _healthScore: 100
   _healthScoreMultiplier: 0.15
 --- !u!1 &1733378722
