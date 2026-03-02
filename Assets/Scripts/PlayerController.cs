@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] public float speed = 1;
+    [SerializeField] private float _baseSpeed = 1;
+    public float speed;
     private Vector2 _move;
     private Rigidbody2D _rb;
     private float _spriteRotation;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void GameStart()
     {
         transform.position = Vector3.zero;
+        speed = _baseSpeed;
     }
     
     void Update()
