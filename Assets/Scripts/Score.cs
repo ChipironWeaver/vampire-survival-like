@@ -68,7 +68,7 @@ public class Score : MonoBehaviour
 
     private void HealUpdate()
     {
-        UpdateScore(30,0.5f);
+        UpdateScore(50,0.25f);
     }
     
     IEnumerator FadeOut(bool win)
