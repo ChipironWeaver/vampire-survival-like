@@ -14,6 +14,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private float _baseEnemyAmount = 1f;
     [SerializeField] private float _enemyAmountMultiplier = 1f;
     [SerializeField] private List<string> _seed;
+    [Header("Balance")]
     
     private float _currentCooldown;
     private float _enemyAmount;
