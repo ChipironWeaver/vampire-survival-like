@@ -41612,6 +41612,7 @@ MonoBehaviour:
   - gaqerhb
   - kdtykdtyk
   - ghb,dfgykhdftgk
+  _requiredPlayerDistance: 0
 --- !u!1 &1217114175
 GameObject:
   m_ObjectHideFlags: 0
@@ -42215,6 +42216,7 @@ MonoBehaviour:
   - qerhqerh
   - qerhqeh
   - erhherqreqhr
+  _requiredPlayerDistance: 5
 --- !u!1 &1427257937
 GameObject:
   m_ObjectHideFlags: 0

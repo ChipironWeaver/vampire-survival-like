@@ -11,6 +11,9 @@ public class Score : MonoBehaviour
     [SerializeField] private Color _winColor;
     [SerializeField] private Color _loseColor;
     [SerializeField] private float _fadeOutDuration;
+    [SerializeField] private Color _baseColor;
+    public static Color textColor = Color.white;
+    
     public static float score = 100;
     public static float scoreMultiplier = 3;
     static TextMeshProUGUI _scoreText;
@@ -33,7 +36,7 @@ public class Score : MonoBehaviour
         score = _baseScore;
         scoreMultiplier = _baseScoreMultiplier;
         UpdateScore();
-        _scoreText.color = Color.white;
+        _scoreText.color = _baseColor;
     }
     
     public static void UpdateScore(float tempScore = 0, float tempScoreMultiplier = 0)
@@ -42,6 +45,8 @@ public class Score : MonoBehaviour
         scoreMultiplier += tempScoreMultiplier;
         int intScore = (int)(score * scoreMultiplier); 
         _scoreText.SetText(intScore.ToString());
+        _scoreText.color = textColor;
+        print(textColor);
     }
 
     private void OnEnable()
