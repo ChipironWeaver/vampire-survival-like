@@ -9,6 +9,8 @@ public class PowerUpController : MonoBehaviour
     [SerializeField] private float _scoreBoost;
     [SerializeField] private float _scoreMultiplierBoost;
     [SerializeField] private AudioClip _clip;
+    [SerializeField] private Color _flashColor = Color.clear;
+    [SerializeField] private float _flashDuration;
     
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -44,6 +46,7 @@ public class PowerUpController : MonoBehaviour
 
             if (_clip != null) AudioSource.PlayClipAtPoint(_clip, Vector3.zero);
             
+            StartCoroutine(UIFlash.CoroutineFlash(_flashColor, _flashDuration));
             if(_buffDuration >= 0) StartCoroutine(DestroySelf());
         }
     }

@@ -399,8 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f139548453b7b349a376775036ed9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParalaxMovement
-  target: {fileID: 731206652}
-  velocityMultiplier: {x: 0.5, y: 0.5, z: -1}
+  target: {fileID: 2134736023}
+  velocityMultiplier: {x: 0.2, y: 0.2, z: -1}
 --- !u!483693784 &479984885
 TilemapRenderer:
   serializedVersion: 2
@@ -28612,8 +28612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f139548453b7b349a376775036ed9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParalaxMovement
-  target: {fileID: 731206652}
-  velocityMultiplier: {x: 0.25, y: 0.25, z: -2}
+  target: {fileID: 2134736023}
+  velocityMultiplier: {x: 0.1, y: 0.1, z: -2}
 --- !u!483693784 &651188144
 TilemapRenderer:
   serializedVersion: 2
@@ -43018,6 +43018,7 @@ MonoBehaviour:
   _winColor: {r: 0.04431629, g: 1, b: 0, a: 0}
   _loseColor: {r: 1, g: 0, b: 0, a: 0}
   _fadeOutDuration: 1
+  _baseColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1733378722
 GameObject:
   m_ObjectHideFlags: 0
@@ -43137,10 +43138,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fea20a2aa497ee41b388c1f958e800b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _healthFlashColor: {r: 0, g: 1, b: 0.06287718, a: 0.53333336}
+  _healthFlashColor: {r: 0.3820755, g: 1, b: 0.4208472, a: 0.49411765}
   _healthFlashDuration: 0.5
-  _damageFlashColor: {r: 1, g: 0, b: 0, a: 0.48235294}
+  _damageFlashColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 0.49411765}
   _damageFlashDuration: 0.5
+  _winFlashColor: {r: 0.60831374, g: 1, b: 0.5707547, a: 1}
+  _winFlashDuration: 1
+  _loseFlashColor: {r: 0.4811321, g: 0, b: 0, a: 1}
+  _loseFlashDuration: 1
+  _scoreFlashColor: {r: 1, g: 0.95210636, b: 0.72156864, a: 0.49411765}
+  _scoreFlashDuration: 0.5
+  _speedFlashColor: {r: 0.5707547, g: 0.98209244, b: 1, a: 0.49411765}
+  _speedFlashDuration: 0.5
 --- !u!1 &1776012786
 GameObject:
   m_ObjectHideFlags: 0
@@ -43271,7 +43280,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7122642, g: 1, b: 0.95204407, a: 1}
+    m_HighlightedColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}

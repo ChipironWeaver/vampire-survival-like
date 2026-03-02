@@ -46,7 +46,6 @@ public class Score : MonoBehaviour
         int intScore = (int)(score * scoreMultiplier); 
         _scoreText.SetText(intScore.ToString());
         _scoreText.color = textColor;
-        print(textColor);
     }
 
     private void OnEnable()

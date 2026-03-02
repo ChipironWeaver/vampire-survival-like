@@ -12,37 +12,69 @@ public class UIFlash : MonoBehaviour
     [Header("Damage Flash")]
     [SerializeField] private Color _damageFlashColor;
     [SerializeField] private float _damageFlashDuration;
+    [Header("Win Flash")]
+    [SerializeField] private Color _winFlashColor;
+    [SerializeField] private float _winFlashDuration;
+    [Header("Lose Flash")]
+    [SerializeField] private Color _loseFlashColor;
+    [SerializeField] private float _loseFlashDuration;
+    [Header("Score Flash")]
+    [SerializeField] private Color _scoreFlashColor;
+    [SerializeField] private float _scoreFlashDuration;
+    [Header("Speed Flash")]
+    [SerializeField] private Color _speedFlashColor;
+    [SerializeField] private float _speedFlashDuration;
     
-    private Image _flash;
+    
+    public static Image flash;
+    static UIFlash _instance;
+    public static UIFlash Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+  
+    void Awake()
+    {
+        _instance = this;
+    }
     private void OnEnable()
     {
         HealthController.onPlayerDamage += DamageFlash;
-        HealthController.onPlayerHeal += HealFlash;
-        _flash = GetComponent<Image>();
+        LevelController.onGameOver += EndFlash;
+        flash = GetComponent<Image>();
     }
 
     private void OnDisable()
     {
         HealthController.onPlayerDamage -= DamageFlash;
-        HealthController.onPlayerHeal -= HealFlash;
+        LevelController.onGameOver -= EndFlash;
     }
 
     private void DamageFlash()
     {
         StartCoroutine(CoroutineFlash(_damageFlashColor, _damageFlashDuration));
     }
-
-    private void HealFlash()
+    private void EndFlash(bool win)
     {
-        StartCoroutine(CoroutineFlash(_healthFlashColor, _healthFlashDuration));
+        if (win)
+        {
+            StartCoroutine(CoroutineFlash(_winFlashColor, _winFlashDuration));
+        }
+        else
+        {
+            StartCoroutine(CoroutineFlash( _loseFlashColor, _loseFlashDuration));
+        }
     }
 
-    private IEnumerator CoroutineFlash(Color color, float duration)
+    public static IEnumerator CoroutineFlash(Color color, float duration)
     {
         float currentTime = 0;
         while (currentTime < duration)
         {
-            _flash.color = Color.Lerp(Color.clear, color, Mathf.PingPong(currentTime * 2 / duration, 1));
+            flash.color = Color.Lerp(Color.clear, color, Mathf.PingPong(currentTime * 2 / duration, 1));
             currentTime += Time.deltaTime;
             yield return new WaitForNextFrameUnit();
         }
