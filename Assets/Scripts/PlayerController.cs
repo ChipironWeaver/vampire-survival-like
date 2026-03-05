@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = Vector3.zero;
         speed = _baseSpeed;
-        print("gamestart");
     }
 
     private void OnMove(InputValue value)

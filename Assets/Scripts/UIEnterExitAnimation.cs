@@ -54,7 +54,7 @@ public class UIEnterExitAnimation : MonoBehaviour
         
         AudioSource.PlayClipAtPoint(win ? _winClip : _loseClip, Vector3.zero);
         
-        int _score = (int)(Score.score * Score.scoreMultiplier);
+        int _score = (int)(Score.score * Score.scoreMultiplier * Score.difficultyMultiplier);
         _scoreText.SetText(_score.ToString());
             
         _winLoseText.SetText(win ? _winText : _loseText);
