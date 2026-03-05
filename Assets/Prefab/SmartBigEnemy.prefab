@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8285882259000853132}
   - component: {fileID: 3583688561629485782}
   - component: {fileID: 7861911809140719983}
+  - component: {fileID: 1977429959462264645}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -216,7 +217,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -224,6 +225,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1977429959462264645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984477428734698210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b82623c1e584364ca7e073311309dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageDealerPlayer
+  _damage: 1
 --- !u!1 &8219285604139739079
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +247,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8566066424662431927}
-  - component: {fileID: 716424819739275574}
   - component: {fileID: 7193899853514579813}
   - component: {fileID: 7818541910225106296}
   m_Layer: 0
@@ -260,19 +273,6 @@ Transform:
   - {fileID: 8000800482066367711}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &716424819739275574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8219285604139739079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b82623c1e584364ca7e073311309dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageDealerPlayer
-  _damage: 1
 --- !u!114 &7193899853514579813
 MonoBehaviour:
   m_ObjectHideFlags: 0

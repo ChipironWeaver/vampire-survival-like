@@ -42971,7 +42971,7 @@ GameObject:
   - component: {fileID: 1379442092}
   - component: {fileID: 1379442091}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Nav Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43023,7 +43023,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2bb000edfa89fab46a67add46b0fe30c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e138c224e1196e54389e00c299a48571, type: 2}
 --- !u!4 &1379442093
 Transform:
   m_ObjectHideFlags: 0
