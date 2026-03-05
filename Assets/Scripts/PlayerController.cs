@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = Vector3.zero;
         speed = _baseSpeed;
+        print("gamestart");
     }
     
     void Update()

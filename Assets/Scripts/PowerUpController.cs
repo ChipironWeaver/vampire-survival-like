@@ -41,6 +41,7 @@ public class PowerUpController : MonoBehaviour
             if (_speedBoost > 0)
             {
                 _player.GetComponent<PlayerController>().speed += _speedBoost;
+                print(_player.GetComponent<PlayerController>().speed);
             }
 
             if (_scoreBoost > 0 || _scoreMultiplierBoost > 0)
