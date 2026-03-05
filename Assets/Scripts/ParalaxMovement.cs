@@ -7,6 +7,6 @@ public class ParalaxMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        GetComponent<Transform>().position = new  Vector3(target.position.x * velocityMultiplier.x, target.position.y * velocityMultiplier.y, target.position.z * velocityMultiplier.z);
+        transform.position = new  Vector3(target.position.x * velocityMultiplier.x, target.position.y * velocityMultiplier.y, target.position.z * velocityMultiplier.z);
     }
 }

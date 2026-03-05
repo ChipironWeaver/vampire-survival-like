@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 
@@ -25,6 +26,8 @@ public class HealthController : MonoBehaviour
     public delegate void OnPlayerHeal();
     public static event OnPlayerHeal onPlayerHeal;
 
+    [Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
 
     public void OnEnable()
     {

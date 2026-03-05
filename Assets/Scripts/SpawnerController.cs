@@ -58,7 +58,7 @@ public class SpawnerController : MonoBehaviour
     }
     private void Update()
     {
-        if (LevelController.gameIsRunning)
+        if (LevelController.GameIsRunning)
         {
             TrySpawnEnemies();
         }

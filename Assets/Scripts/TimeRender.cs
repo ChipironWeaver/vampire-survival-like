@@ -27,7 +27,7 @@ public class TimeRender : MonoBehaviour
 
     private void Update()
     {
-        if (LevelController.gameIsRunning)
+        if (LevelController.GameIsRunning)
         {
             _timeText.color = Color.Lerp(_startColor, _endColor, LevelController.CurrentGameTime / LevelController.MaxGameTime);
             _timeText.text = _beforeText + (int)LevelController.CurrentGameTime;

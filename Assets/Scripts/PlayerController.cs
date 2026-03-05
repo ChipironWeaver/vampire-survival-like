@@ -5,55 +5,25 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _baseSpeed = 1;
     public float speed;
+    private Animator _animator;
     private Vector2 _move;
     private Rigidbody2D _rb;
     private float _spriteRotation;
     private Transform _transform;
-    private Animator _animator;
-    static PlayerController _instance;
-    
-    public static PlayerController Instance
+
+    public static PlayerController Instance { get; private set; }
+
+    private void Awake()
     {
-        get
-        {
-            return _instance;
-        }
-    }
-  
-    void Awake()
-    {
-        _instance = this;
-    }
-    
-    void OnEnable()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-        _transform = GetComponent<Transform>();
-        _animator = GetComponent<Animator>();
-        LevelController.onStartGame += GameStart;
+        Instance = this;
     }
 
-    void OnDisable()
-    {
-        LevelController.onStartGame -= GameStart;
-    }
-
-    void GameStart()
-    {
-        transform.position = Vector3.zero;
-        speed = _baseSpeed;
-        print("gamestart");
-    }
-    
-    void Update()
+    private void Update()
     {
         if (_move != Vector2.zero)
         {
             _spriteRotation = Vector2.Angle(Vector2.up, _move);
-            if (_move.x > 0)
-            {
-                _spriteRotation = 180-_spriteRotation + 180;
-            }
+            if (_move.x > 0) _spriteRotation = 180 - _spriteRotation + 180;
             _rb.linearVelocity = speed * _move;
             _animator.SetBool("IsMoving", true);
         }
@@ -62,18 +32,35 @@ public class PlayerController : MonoBehaviour
             _rb.linearVelocity = Vector3.zero;
             _animator.SetBool("IsMoving", false);
         }
-        _transform.localRotation = Quaternion.Euler(0, 0 , _spriteRotation);
+
+        _transform.localRotation = Quaternion.Euler(0, 0, _spriteRotation);
     }
 
-    void OnMove(InputValue value)
+    private void OnEnable()
     {
-        if (LevelController.gameIsRunning)
-        {
+        _rb = GetComponent<Rigidbody2D>();
+        _transform = GetComponent<Transform>();
+        _animator = GetComponent<Animator>();
+        LevelController.onStartGame += GameStart;
+    }
+
+    private void OnDisable()
+    {
+        LevelController.onStartGame -= GameStart;
+    }
+
+    private void GameStart()
+    {
+        transform.position = Vector3.zero;
+        speed = _baseSpeed;
+        print("gamestart");
+    }
+
+    private void OnMove(InputValue value)
+    {
+        if (LevelController.GameIsRunning)
             _move = value.Get<Vector2>();
-        }
         else
-        {
             _move = Vector2.zero;
-        }
     }
 }
