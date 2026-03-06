@@ -24089,6 +24089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 837470548061023631, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: m_text
+      value: 'Time : 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 2152083757201161964, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
       propertyPath: _autoFadeColor.b
       value: 0
@@ -24204,6 +24208,30 @@ PrefabInstance:
     - target: {fileID: 3837661944334882131, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658945286370155678, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _colorGradient.key0.b
+      value: 0.09533288
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658945286370155678, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658945286370155678, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _colorGradient.key0.r
+      value: 0.754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658945286370155678, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658945286370155678, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _colorGradient.key1.g
+      value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658945286370155678, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _colorGradient.key1.r
+      value: 0.22135547
       objectReference: {fileID: 0}
     - target: {fileID: 7579033232740190278, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
