@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UIScore : MonoBehaviour
 {
+    [Header("Scoring Settings")]
     [SerializeField] private float _baseScore;
     [SerializeField] private float _baseScoreMultiplier;
     [SerializeField] private float _difficultyMultiplier;
@@ -19,6 +20,11 @@ public class UIScore : MonoBehaviour
     [Header("Health Score")]
     [SerializeField] private float _healthScore;
     [SerializeField] private float _healthScoreMultiplier;
+
+    [Header("Dynamic Score Color")] [SerializeField]
+    private Vector2 _gradientScoreRange;
+    [SerializeField] private Gradient _gradientColor;
+    
     public static Color textColor = Color.white;
     
     public static float score = 100;
@@ -55,6 +61,11 @@ public class UIScore : MonoBehaviour
         int intScore = (int)(score * scoreMultiplier * difficultyMultiplier); 
         _scoreText.SetText(intScore.ToString());
         _scoreText.color = textColor;
+    }
+
+    private void Update()
+    {
+        textColor = _gradientColor.Evaluate(((score*scoreMultiplier*difficultyMultiplier)-_gradientScoreRange.x)/_gradientScoreRange.y);
     }
 
     private void OnEnable()
