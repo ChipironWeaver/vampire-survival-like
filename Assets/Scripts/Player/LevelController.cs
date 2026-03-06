@@ -59,7 +59,7 @@ public class LevelController : MonoBehaviour
             _currentScoreCooldown += Time.deltaTime;
             if (_currentScoreCooldown >= 1f)
             {
-                Score.UpdateScore(_overTimeScore);
+                UIScore.UpdateScore(_overTimeScore);
                 _currentScoreCooldown -= 1f;
             }
             if (CurrentGameTime >= _maxGameTime) GameOver(true);

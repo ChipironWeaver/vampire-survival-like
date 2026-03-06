@@ -3,7 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public class UIScore : MonoBehaviour
 {
     [SerializeField] private float _baseScore;
     [SerializeField] private float _baseScoreMultiplier;
@@ -26,8 +26,8 @@ public class Score : MonoBehaviour
     public static float difficultyMultiplier = 1;
     static TextMeshProUGUI _scoreText;
 
-    static Score _instance;
-    public static Score instance
+    static UIScore _instance;
+    public static UIScore instance
     {
         get
         {

@@ -10,11 +10,15 @@ public class UIEnterExitAnimation : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private Vector2 direction;
     [SerializeField] private float speed;
+    [Header("Background")]
+    [SerializeField] private Gradient _backgroundGradient;
+    [SerializeField] private UIAnimation _uiAnimation;
     
     private Vector2 _target;
     
     public void AnimatedEnter()
     {
+        if (_uiAnimation != null) _uiAnimation.backgroundGradient = _backgroundGradient;
         StartCoroutine(SmoothMove(Vector2.zero, new Vector2((float)Screen.height * direction.x * 2, (float)Screen.width * direction.y * 2), speed));
     }
     IEnumerator SmoothMove(Vector2 target , Vector2 startingPosition, float duration, bool disable = false)

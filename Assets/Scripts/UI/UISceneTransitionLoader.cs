@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneTransitionLoader : MonoBehaviour
+public class UISceneTransitionLoader : MonoBehaviour
 {
     [SerializeField] private bool _autoFadeIn;
     [SerializeField] private Color _autoFadeColor =  Color.white;

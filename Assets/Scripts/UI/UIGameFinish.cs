@@ -57,7 +57,7 @@ public class UIGameFinish : MonoBehaviour
         
         AudioSource.PlayClipAtPoint(win ? _winClip : _loseClip, Vector3.zero);
         
-        int _score = (int)(Score.score * Score.scoreMultiplier * Score.difficultyMultiplier);
+        int _score = (int)(UIScore.score * UIScore.scoreMultiplier * UIScore.difficultyMultiplier);
         _scoreText.SetText(_score.ToString());
             
         _winLoseText.SetText(win ? _winText : _loseText);

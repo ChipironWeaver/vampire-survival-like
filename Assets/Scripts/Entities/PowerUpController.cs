@@ -45,7 +45,7 @@ public class PowerUpController : MonoBehaviour
 
             if (_scoreBoost > 0 || _scoreMultiplierBoost > 0)
             {
-                Score.UpdateScore(_scoreBoost, _scoreMultiplierBoost);
+                UIScore.UpdateScore(_scoreBoost, _scoreMultiplierBoost);
             }
 
             onPickUpFlash?.Invoke(_flashColor, _flashDuration);
