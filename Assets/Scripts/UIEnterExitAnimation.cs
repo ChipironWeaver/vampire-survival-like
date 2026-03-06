@@ -1,89 +1,53 @@
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
-using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
-using UnityEngine.UI;
 
 public class UIEnterExitAnimation : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private Vector2 _direction;
-    [SerializeField] private float _speed;
-    [Header("Visual")]
-    [SerializeField] private Sprite _spriteWin;
-    [SerializeField] private Sprite _spriteLose;
-    [SerializeField] private Color _textWinColor;
-    [SerializeField] private Color _textLoseColor;
-    [SerializeField] private string _loseText;
-    [SerializeField] private string _winText;
-    [Header("Audio")]
-    [SerializeField] private AudioClip _winClip;
-    [SerializeField] private AudioClip _loseClip;
-    [Header("References")]
-    [SerializeField] private TextMeshProUGUI _scoreText;
-    [SerializeField] private TextMeshProUGUI _winLoseText;
-    [SerializeField] private TextMeshProUGUI _replayText;
-    [SerializeField] private Image _replayButton;
-    
+    [SerializeField] private Vector2 direction;
+    [SerializeField] private float speed;
+    [Header("Color")]
+    [SerializeField] private Gradient color;
+    [SerializeField] private GameObject _camera;
     
     private Vector2 _target;
-    private Transform _transform;
-    private Image _image;
-    private void OnEnable()
-    {
-        _transform = GetComponent<Transform>();
-        _image = GetComponent<Image>();
-        LevelController.onGameOver += GameOver;
-    }
-
-    private void OnDisable()
-    {
-        LevelController.onGameOver -= GameOver;
-    }
     
-    public void GameOver(bool win)
+    public void AnimatedEnter()
     {
-        Sprite buttonSprite = win ? _spriteWin : _spriteLose;
-        _image.sprite = buttonSprite;
-        _replayButton.sprite = buttonSprite;
-        
-        Color textColor = win ? _textWinColor : _textLoseColor;
-        _scoreText.color = textColor;
-        _replayText.color = textColor;
-        _winLoseText.color = textColor;
-        
-        AudioSource.PlayClipAtPoint(win ? _winClip : _loseClip, Vector3.zero);
-        
-        int _score = (int)(Score.score * Score.scoreMultiplier * Score.difficultyMultiplier);
-        _scoreText.SetText(_score.ToString());
-            
-        _winLoseText.SetText(win ? _winText : _loseText);
-        StartCoroutine(SmoothMove(Vector2.zero, new Vector2(Screen.height * _direction.x * 2, Screen.width * _direction.y * 2), _speed));
-    }
-    public void FadeOut()
-    {
-        StartCoroutine(SmoothMove(new Vector2(Screen.height * _direction.x * 2, Screen.width * _direction.y * 2),Vector2.zero, _speed, true));
+        StartCoroutine(SmoothMove(Vector2.zero, new Vector2((float)Screen.height * direction.x * 2, (float)Screen.width * direction.y * 2), speed));
     }
     IEnumerator SmoothMove(Vector2 target , Vector2 startingPosition, float duration, bool disable = false)
     {
+        
         float time = 0;
         if (disable)
         {
             while (time < duration)
             {
-                _transform.localPosition = Vector2.Lerp(startingPosition, target, time / duration);
+                GetComponent<Transform>().localPosition = Vector2.Lerp(startingPosition, target, time / duration);
                 time += Time.deltaTime;
                 yield return new WaitForNextFrameUnit();
             }
+
+            this.GameObject().SetActive(false);
         }
         else
         {
             while (time < duration)
             {
-                _transform.localPosition = Vector2.Lerp(startingPosition, target, 1 - (Mathf.Pow(time / duration -1,5) *-1)  ); 
+                GetComponent<Transform>().localPosition = Vector2.Lerp(startingPosition, target, 1 - (Mathf.Pow(time / duration -1,5) *-1)  ); 
                 time += Time.deltaTime;
                 yield return new WaitForNextFrameUnit();
             }
         }
+    }
+    // Update is called once per frame
+    public void AnimatedDisable()
+    {
+        StartCoroutine(SmoothMove(new Vector2((float)Screen.height * direction.x * 2, (float)Screen.width * direction.y * 2),Vector2.zero, speed, true));
     }
 }
