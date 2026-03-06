@@ -24209,7 +24209,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3837661944334882131, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 1291062133}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
@@ -85054,8 +85054,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionLoader
   _autoFadeIn: 1
+  _autoFadeColor: {r: 0.3207547, g: 0, b: 0, a: 1}
   _fadeDuration: 0.5
-  _fadeColor: {r: 0.3773585, g: 0, b: 0, a: 1}
+  _sceneColorTransitions: []
 --- !u!114 &1291062135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85070,7 +85071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
