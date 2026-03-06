@@ -10,9 +10,6 @@ public class UIEnterExitAnimation : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private Vector2 direction;
     [SerializeField] private float speed;
-    [Header("Color")]
-    [SerializeField] private Gradient color;
-    [SerializeField] private GameObject _camera;
     
     private Vector2 _target;
     
@@ -28,7 +25,7 @@ public class UIEnterExitAnimation : MonoBehaviour
         {
             while (time < duration)
             {
-                GetComponent<Transform>().localPosition = Vector2.Lerp(startingPosition, target, time / duration);
+                transform.localPosition = Vector2.Lerp(startingPosition, target, time / duration);
                 time += Time.deltaTime;
                 yield return new WaitForNextFrameUnit();
             }
@@ -39,7 +36,7 @@ public class UIEnterExitAnimation : MonoBehaviour
         {
             while (time < duration)
             {
-                GetComponent<Transform>().localPosition = Vector2.Lerp(startingPosition, target, 1 - (Mathf.Pow(time / duration -1,5) *-1)  ); 
+                transform.localPosition = Vector2.Lerp(startingPosition, target, 1 - (Mathf.Pow(time / duration -1,5) *-1)  ); 
                 time += Time.deltaTime;
                 yield return new WaitForNextFrameUnit();
             }
