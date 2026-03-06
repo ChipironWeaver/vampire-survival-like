@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.UI;
@@ -19,20 +20,19 @@ public class UIGameFinish : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip _winClip;
     [SerializeField] private AudioClip _loseClip;
-    [Header("References")]
+
+    [Header("References")] 
+    [SerializeField] private List<TextMeshProUGUI> _texts;
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private TextMeshProUGUI _winLoseText;
-    [SerializeField] private TextMeshProUGUI _replayText;
-    [SerializeField] private Image _replayButton;
+    [SerializeField] private List<Image> _buttons;
     
     
     private Vector2 _target;
     private Transform _transform;
-    private Image _image;
     private void OnEnable()
     {
         _transform = GetComponent<Transform>();
-        _image = GetComponent<Image>();
         LevelController.onGameOver += GameOver;
     }
 
@@ -44,13 +44,16 @@ public class UIGameFinish : MonoBehaviour
     public void GameOver(bool win)
     {
         Sprite buttonSprite = win ? _spriteWin : _spriteLose;
-        _image.sprite = buttonSprite;
-        _replayButton.sprite = buttonSprite;
+        foreach (Image button in _buttons)
+        {
+            button.sprite = buttonSprite;
+        }
         
         Color textColor = win ? _textWinColor : _textLoseColor;
-        _scoreText.color = textColor;
-        _replayText.color = textColor;
-        _winLoseText.color = textColor;
+        foreach (TextMeshProUGUI text in _texts)
+        {
+            text.color = textColor;
+        }
         
         AudioSource.PlayClipAtPoint(win ? _winClip : _loseClip, Vector3.zero);
         

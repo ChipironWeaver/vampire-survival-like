@@ -5,6 +5,6 @@ public class UIFonctions : MonoBehaviour
 {
     public void StopGame()
     {
-        
+        Application.Quit();
     }
 }
