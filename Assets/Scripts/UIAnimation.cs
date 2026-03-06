@@ -4,10 +4,18 @@ using Image = UnityEngine.UI.Image;
 public class UIAnimation : MonoBehaviour
 {
     [SerializeField] private List<Sprite> frames;
-    [SerializeField] private float transitionTime;
-    [SerializeField] private GameObject _target;
+    [SerializeField] private float transitionTime = 0.5f;
+    [SerializeField] private Image _target;
     private float currentTime;
     private int  currentFrame;
+
+    void Start()
+    {
+        if (_target == null) 
+        {
+            _target = GetComponent<Image>();
+        }
+    }
     void Update()
     {
         currentTime += Time.deltaTime;
@@ -19,7 +27,7 @@ public class UIAnimation : MonoBehaviour
             {
                 currentFrame = 0;
             }
-            _target.GetComponent<Image>().sprite = frames[currentFrame];
+            _target.sprite = frames[currentFrame];
         }
     }
 }

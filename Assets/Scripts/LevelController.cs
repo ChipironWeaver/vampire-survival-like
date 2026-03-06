@@ -14,7 +14,7 @@ public class LevelController : MonoBehaviour
 
     public static float CurrentGameTime;
     public static float MaxGameTime = 60f;
-    public static bool gameIsRunning = false;
+    public static bool GameIsRunning = false;
     
     private float _currentScoreCooldown = 0f;
     
@@ -39,7 +39,7 @@ public class LevelController : MonoBehaviour
     public void GameStart()
     {
         onStartGame?.Invoke();
-        gameIsRunning = true;
+        GameIsRunning = true;
         CurrentGameTime = 0f;
         _currentScoreCooldown = 0f;
         MaxGameTime = _maxGameTime;
@@ -48,12 +48,12 @@ public class LevelController : MonoBehaviour
     public static void GameOver(bool win)
     {
         onGameOver?.Invoke(win);
-        gameIsRunning = false;
+        GameIsRunning = false;
     }
 
     public void Update()
     {
-        if (gameIsRunning)
+        if (GameIsRunning)
         {
             CurrentGameTime += Time.deltaTime;
             _currentScoreCooldown += Time.deltaTime;
