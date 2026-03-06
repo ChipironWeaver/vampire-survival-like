@@ -41641,6 +41641,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientColor.key0.b
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientColor.key0.g
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientColor.key0.r
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientColor.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientColor.key1.g
+      value: 0.8741049
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientColor.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430339216913877730, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: _gradientScoreRange.y
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3689161125721440202, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
       propertyPath: _healthController
       value: 
