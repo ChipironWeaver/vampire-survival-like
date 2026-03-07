@@ -24088,7 +24088,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1028796884158713550, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 290998158}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3796802596827040582, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1975663438}
   m_SourcePrefab: {fileID: 100100000, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
 --- !u!1 &589287268
 GameObject:
@@ -24132,6 +24135,10 @@ PrefabInstance:
     - target: {fileID: 837470548061023631, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
       propertyPath: m_text
       value: 'Time : 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714299018740459814, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
+      propertyPath: m_text
+      value: 12345
       objectReference: {fileID: 0}
     - target: {fileID: 2152083757201161964, guid: 0c80338f54b5e314693f6f2b1e27ed6b, type: 3}
       propertyPath: _autoFadeColor.b
@@ -84833,6 +84840,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1096657289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1145632041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796802596827040582, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+  m_PrefabInstance: {fileID: 586580724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1175207163
 GameObject:
   m_ObjectHideFlags: 0
@@ -85413,12 +85425,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2123337684103972492, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
   m_PrefabInstance: {fileID: 586580724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1145632041}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81abf9d227f4626418b920689671f957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1975663438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145632041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9575f9d3b0bc6224aa12932d876147bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  jsonFile: {fileID: 4900000, guid: 618d50c9f122a3d4aab07ac6ea5288e8, type: 3}
 --- !u!1 &2019261783
 GameObject:
   m_ObjectHideFlags: 0
