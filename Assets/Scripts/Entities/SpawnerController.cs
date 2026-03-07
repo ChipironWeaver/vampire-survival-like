@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using Random = System.Random;
 
 public class SpawnerController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private List<GameObject> _enemiesPrefabs = new List<GameObject>();
+    [SerializeField] private List<EnemyWeight> _enemiesPrefab = new List<EnemyWeight>();
     [SerializeField] private List<Transform> _spawnerTransform = new List<Transform>();
     [Header("Timing Settings")]
     [SerializeField] private float _baseCooldown = 5f;
@@ -22,12 +23,20 @@ public class SpawnerController : MonoBehaviour
     private List<GameObject> _enemies = new List<GameObject>();
     private Random _random =  new Random();
     private GameObject _enemiesParent;
+    private int _totalEnemyWeight;
 
+    [Serializable]
+    public class EnemyWeight
+    {
+        public GameObject prefab;
+        public int weight = 1;
+    }
+    
     private void OnEnable()
     {
         LevelController.onGameOver += DestroyEnemies;
         LevelController.onStartGame += GameStart;
-        
+        _totalEnemyWeight =  CountWeight(_enemiesPrefab);
     }
 
     private void OnDisable()
@@ -76,7 +85,8 @@ public class SpawnerController : MonoBehaviour
                     _spawnPosition = _spawnerTransform[_random.Next(0, _spawnerTransform.Count)].position;
                 }
 
-                GameObject _enemieSelected =  _enemiesPrefabs[_random.Next(0, _enemiesPrefabs.Count)];
+                //GameObject _enemieSelected =  _enemiesPrefab[_random.Next(0, _enemiesPrefab.Count)];
+                GameObject _enemieSelected = FindPrefab(_enemiesPrefab, _random.Next(0,_totalEnemyWeight));
                 _enemies.Add(InstantiateEnemy(_spawnPosition, _enemieSelected));
                 
             }
@@ -110,5 +120,34 @@ public class SpawnerController : MonoBehaviour
             Destroy(gameObject);
         }
         _enemies.Clear();
+    }
+
+    private int CountWeight(List<EnemyWeight> enemyPrefab)
+    {
+        int count = 0;
+        foreach (EnemyWeight enemyWeight in enemyPrefab)
+        {
+            count += enemyWeight.weight;
+        }
+        return count;
+    }
+
+    private GameObject FindPrefab(List<EnemyWeight> enemyPrefab, int weight)
+    {
+        GameObject prefab = enemyPrefab[0].prefab;
+        weight++;
+        print(weight);
+        foreach (EnemyWeight enemyWeight in enemyPrefab)
+        {
+            weight -= enemyWeight.weight;
+            if (weight <= 0)
+            {
+                prefab = enemyWeight.prefab;
+                
+                print(enemyWeight.prefab.name);
+                break;
+            }
+        }
+        return prefab;
     }
 }

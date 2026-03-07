@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicEnemyAI
   _target: {fileID: 0}
-  _moveSpeed: 1.5
+  _moveSpeed: 2
   _rotationBasedMovement: 1
 --- !u!114 &716424819739275574
 MonoBehaviour:
