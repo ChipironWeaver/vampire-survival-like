@@ -740,8 +740,8 @@ MonoBehaviour:
   speed: 0.5
   _backgroundGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.53333336, g: 1, b: 0.9800966, a: 1}
+    key1: {r: 0.61832464, g: 1, b: 0.53333336, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -768,7 +768,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  _uiAnimation: {fileID: 0}
+  _uiAnimation: {fileID: 1835634779}
 --- !u!1 &715816019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,17 +2132,17 @@ MonoBehaviour:
   _target: {fileID: 1835634780}
   backgroundGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.9254902, g: 0.5019608, b: 0.72158253, a: 1}
+    key1: {r: 0.70980394, g: 0.5019608, b: 0.9254902, a: 1}
+    key2: {r: 0.5019608, g: 0.6457799, b: 0.9254902, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
+    ctime1: 32189
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -2158,7 +2158,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   _gradientTime: 5
   _camera: {fileID: 1307097486}
@@ -2482,17 +2482,17 @@ MonoBehaviour:
   speed: 0.5
   _backgroundGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.9254902, g: 0.5019608, b: 0.72158253, a: 1}
+    key1: {r: 0.70980394, g: 0.5019608, b: 0.9254902, a: 1}
+    key2: {r: 0.5019608, g: 0.6457799, b: 0.9254902, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
+    ctime1: 32189
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -2508,7 +2508,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   _uiAnimation: {fileID: 1835634779}
 --- !u!1 &1961818200
