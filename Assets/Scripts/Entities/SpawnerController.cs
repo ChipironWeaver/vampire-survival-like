@@ -136,15 +136,12 @@ public class SpawnerController : MonoBehaviour
     {
         GameObject prefab = enemyPrefab[0].prefab;
         weight++;
-        print(weight);
         foreach (EnemyWeight enemyWeight in enemyPrefab)
         {
             weight -= enemyWeight.weight;
             if (weight <= 0)
             {
                 prefab = enemyWeight.prefab;
-                
-                print(enemyWeight.prefab.name);
                 break;
             }
         }

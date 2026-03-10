@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3340532965746214020, guid: ca290e15e51418b41958103eef3402b9, type: 3}
       propertyPath: _invicible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3340532965746214020, guid: ca290e15e51418b41958103eef3402b9, type: 3}
       propertyPath: _invicibilityTime

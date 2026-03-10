@@ -41758,6 +41758,34 @@ PrefabInstance:
       propertyPath: _enemyAmountMultiplier
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 7120608737826780841, guid: 0a54fbb7128b38f4aaa7bfdf0020453f, type: 3}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[0].weight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 7120608737826780841, guid: da831e98afa79f043912f1e52cde6197, type: 3}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[1].weight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 7120608737826780841, guid: 9fca1283fc69aa54ca84545db542c552, type: 3}
+    - target: {fileID: 426695914988449403, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[2].weight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3796802596827040582, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
       propertyPath: m_Name
       value: Level
@@ -41801,6 +41829,26 @@ PrefabInstance:
     - target: {fileID: 4393130518093923433, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084811281586649765, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084811281586649765, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 8219285604139739079, guid: eaf14d6926d8eab43964022d08a6a610, type: 3}
+    - target: {fileID: 8084811281586649765, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[0].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084811281586649765, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 8219285604139739079, guid: e48e5a21fe92bd04ba4c34de340b5f37, type: 3}
+    - target: {fileID: 8084811281586649765, guid: 4794094486fe1d5448d92ad352adcc6e, type: 3}
+      propertyPath: _enemiesPrefab.Array.data[1].weight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
