@@ -85443,7 +85443,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9575f9d3b0bc6224aa12932d876147bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  jsonFile: {fileID: 4900000, guid: 618d50c9f122a3d4aab07ac6ea5288e8, type: 3}
+  testHighScores:
+  - Name: Hai
+    Score: 1
+    Time: 1
+  - Name: Bob
+    Score: 2
+    Time: 2
+  - Name: Meow
+    Score: 3
+    Time: 3
+  testHighScore:
+    Name: bob
+    Score: 4
+    Time: 4
 --- !u!1 &2019261783
 GameObject:
   m_ObjectHideFlags: 0
