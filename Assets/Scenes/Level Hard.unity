@@ -85444,19 +85444,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   testHighScores:
-  - Name: Hai
-    Score: 1
-    Time: 1
-  - Name: Bob
-    Score: 2
-    Time: 2
-  - Name: Meow
-    Score: 3
-    Time: 3
+  - name: test
+    score: 1
+    time: 1.5
+  - name: bob
+    score: 2
+    time: 2.5
+  - name: meow
+    score: 3
+    time: 3.5
   testHighScore:
-    Name: bob
-    Score: 4
-    Time: 4
+    name: meow
+    score: 1
+    time: 5
 --- !u!1 &2019261783
 GameObject:
   m_ObjectHideFlags: 0
